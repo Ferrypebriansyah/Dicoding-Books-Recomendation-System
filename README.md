@@ -34,7 +34,7 @@ Melakukan evaluasi menggunakan metrik Root Mean Squared Error (RMSE) untuk mengu
 4. Output Rekomendasi:
 Model menghasilkan daftar rekomendasi buku yang diprediksi paling sesuai dengan preferensi masing-masing pengguna, berdasarkan pola rating yang dipelajari tanpa memerlukan metadata buku.
 
-## Data Understanding
+# Data Understanding
 Data yang digunakan untuk membuat sistem rekomendasi buku diambil dari platform open source Kaggle dan dipublikasikan oleh arashnic, [Book Recommendation Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
 Dataset ini terdiri dari 3 tabel yaitu:
 1. Books.csv (8 kolom dan 271360 data)
@@ -57,8 +57,8 @@ ketiga tabel tersebut memiliki relasi antar table yang pada akhirnya saya lakuka
 | 11  | `Image-URL-M`         | object    | URL gambar ukuran sedang sampul buku.                                        |
 | 12  | `Image-URL-L`         | object    | URL gambar ukuran besar sampul buku.                                         |
 
-## Data Preparation
-### Exploratory Data Analysis
+
+# Exploratory Data Analysis
 #### 1. Distribusi Usia Pembaca
 <p align="center">
   <img src="https://github.com/user-attachments/assets/3b333f89-51bd-4f61-949d-ab9115fb0a56" width="600"/>
@@ -102,6 +102,90 @@ ketiga tabel tersebut memiliki relasi antar table yang pada akhirnya saya lakuka
 
 > Preferensi mayoritas pembaca dalam dataset ini mengarah pada cerita-cerita penuh ketegangan (suspense) dan narasi romantis.
 > Popularitas penulis dalam grafik ini tampak dibangun secara kumulatif dari banyaknya karya, bukan hanya dari satu buku yang sangat populer.
+
+
+#### 4. Distribusi Jumlah Rating per Buku
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e5f2ae22-a00c-416a-8760-af9a62ed833b" width="600"/>
+</p>
+
+> **Insight**
+> 1. Mayoritas interaksi dalam dataset adalah rating '0' (lebih dari 600.000 entri).
+> 2. Rating '0' bukan berarti buruk, tetapi merupakan rating implisit, yang kemungkinan besar:
+> Menandakan pengguna pernah berinteraksi dengan buku (misalnya, menambahkan ke rak), Namun tidak memberikan skor numerik secara eksplisit.
+> 3. Jika hanya dilihat rating eksplisit (1–10):
+>  - Terlihat bias ke arah skor positif, yaitu: Skor rendah (1–4) memiliki jumlah ulasan sangat sedikit,
+> - Puncak jumlah rating terjadi pada skor 7 dan 8.
+
+> 5. Temuan ini menunjukkan pentingnya:
+> - Memisahkan rating implisit ('0') dan eksplisit (1–10) dalam analisis dan pemodelan,
+> - Karena kedua jenis data ini mencerminkan perilaku pengguna yang berbeda.
+
+## Data Quality Verifivation
+
+#### 1. Mencari Missing Value
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1287746d-b38d-4ab4-8cd6-77e1ee904654" width="600"/>
+</p>
+
+> **Insight:**
+
+> Terdapat missing value pada kolom `Age` sebanyak  277835 atau kurang dari 50% sehingga akan saya hapus data tersebut.
+
+#### 2. Melihat Jumlah Pengarang, Penerbit, dan Tahun Terbit
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0e98dbf3-6084-4c8b-9e95-0674da51cbed" width="600"/>
+</p>
+
+> **insight:**
+
+> Dapat dilihat bahwa pada data tahun masih belum seragam, ada yang menggunakan tanda petik dan ada yang tidak. Selain itu, terdapat data yang salah, yaitu *DK Publishing Inc* dan *Gallimard* yang seharusnya berada pada kolom Publisher (penerbit). Data ini akan dihapus pada bagian Data Preparation.
+
+#### 3. Memeriksa Duplikasi Data
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/39148691-7d1a-425c-8030-c9a35cb16ee3" width="600"/>
+</p>
+
+> **insight:**
+> Tidak ditemukan duplikasi pada data
+
+# Data Preparation 
+## Data Cleaning
+#### 1. Menghapus Nilai yang tertukar
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/57b6a4e0-6d6d-418e-9b16-f56ff70b9bd9" width="600"/>
+</p>
+
+#### 2. Menghapus Kolom yang Tidak Dibutuhkan
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/56614b5f-e244-4a42-9633-dfd2f0c779bb" width="600"/>
+</p>
+
+#### 3. Mengisi Nilai Kosong Pada Kolom Book-Author
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/55723d74-bc21-4700-9af0-beacce209465" width="600"/>
+</p>
+
+#### 4. Mengubah Tipe Data
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e9057258-67a2-4024-bd64-03f97871009c" width="600"/>
+</p>
+
+#### 5. Deskripsi akhir Dataframe df_merged
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/68dcab81-ba5a-4848-bfdf-96c0b60582bd" width="600"/>
+</p>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
