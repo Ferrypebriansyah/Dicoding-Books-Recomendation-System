@@ -1,4 +1,4 @@
-# Laporan Proyek Machine Learning - Nabila Alawiyah
+# Laporan Proyek Machine Learning - Ferry Pebriansyah
 # Sistem Rekomendasi Buku
 
 - **Nama:** Ferry Pebriansyah
@@ -36,6 +36,26 @@ Model menghasilkan daftar rekomendasi buku yang diprediksi paling sesuai dengan 
 
 ## Data Understanding
 Data yang digunakan untuk membuat sistem rekomendasi buku diambil dari platform open source Kaggle dan dipublikasikan oleh arashnic, [Book Recommendation Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
+Dataset ini terdiri dari 3 tabel yaitu:
+1. Books.csv (8 kolom dan 271360 data)
+2. Users.csv (3 kolom dan  278859 data)
+3. Ratings.csv (3 kolom dan 1149780 data)
+
+ketiga tabel tersebut memiliki relasi antar table yang pada akhirnya saya lakukan *merged table*. Penjelasan setiap varible:
+| No. | Kolom                 | Tipe Data | Deskripsi                                                                    |
+| --- | --------------------- | --------- | ---------------------------------------------------------------------------- |
+| 1   | `User-ID`             | int64     | ID unik pengguna yang memberikan rating buku.                                |
+| 2   | `ISBN`                | object    | ISBN (International Standard Book Number) sebagai ID unik untuk setiap buku. |
+| 3   | `Book-Rating`         | int64     | Nilai rating yang diberikan pengguna terhadap buku (biasanya 0–10).          |
+| 4   | `Location`            | object    | Lokasi pengguna dalam format .                       |
+| 5   | `Age`                 | float64   | Usia pengguna (ada missing values).                                          |
+| 6   | `Book-Title`          | object    | Judul buku yang diberi rating.                                               |
+| 7   | `Book-Author`         | object    | Nama penulis buku (ada nilai kosong).                                        |
+| 8   | `Year-Of-Publication` | object    | Tahun terbit buku. Awalnya bertipe object karena terdapat nilai non-numerik. |
+| 9   | `Publisher`           | object    | Nama penerbit buku (ada nilai kosong).                                       |
+| 10  | `Image-URL-S`         | object    | URL gambar ukuran kecil sampul buku.                                         |
+| 11  | `Image-URL-M`         | object    | URL gambar ukuran sedang sampul buku.                                        |
+| 12  | `Image-URL-L`         | object    | URL gambar ukuran besar sampul buku (ada nilai kosong).                      |
 
 
 
