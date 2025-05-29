@@ -45,16 +45,16 @@ Berdasarkan problem statements di atas, tujuan yang berhasil dicapai pada proyek
 Untuk mencapai goals tersebut, pendekatan solusi yang telah diimplementasikan adalah:
 
 1. Data Preparation dan Filtering:
+Melakukan pembersihan dan filtering data dengan menghapus anomali dan memastikan hanya data rating eksplisit (skor 1–10) yang digunakan. Data diubah menjadi format pasangan (user_id, book_id, rating) yang sesuai untuk pemodelan embedding.
 
-- Melakukan pembersihan data pada kolom-kolom yang mengandung anomali (seperti Age dan Year-Of-Publication).
+2. Implementasi Model Rekomendasi:
+Membangun model Collaborative Filtering berbasis embedding neural network yang memetakan pengguna dan buku ke dalam ruang fitur berdimensi rendah. Model dilatih menggunakan loss function seperti Mean Squared Error (MSE) untuk meminimalkan perbedaan antara rating prediksi dan aktual.
 
-- Melakukan pemfilteran data secara krusial untuk hanya menggunakan baris dengan rating eksplisit (skor 1–10). Data dengan rating 0 (implisit) tidak digunakan dalam pemodelan agar hasil rekomendasi lebih akurat.
+3. Evaluasi Model:
+Melakukan evaluasi menggunakan metrik Root Mean Squared Error (RMSE) untuk mengukur akurasi prediksi rating, serta Precision@K dan Recall@K untuk menilai relevansi rekomendasi yang diberikan kepada pengguna.
 
-2. Implementasi Model Rekomendasi (Collaborative Filtering):
-
-- Menggunakan pendekatan Collaborative Filtering berbasis embedding, di mana sistem mempelajari pola rating antar pengguna untuk mengidentifikasi kesamaan preferensi.
-
-- Model kemudian merekomendasikan buku yang disukai oleh pengguna lain dengan selera serupa.
+4. Output Rekomendasi:
+Model menghasilkan daftar rekomendasi buku yang diprediksi paling sesuai dengan preferensi masing-masing pengguna, berdasarkan pola rating yang dipelajari tanpa memerlukan metadata buku.
 
 # Data Understanding
 
