@@ -290,9 +290,19 @@ Mengukur proporsi item relevan yang berhasil direkomendasikan dari seluruh item 
 
 
 
+# Kesimpulan
+1. Mengidentifikasi buku, penulis, dan karakteristik lainnya yang paling sering mendapatkan rating dari pengguna, berdasarkan analisis data rating eksplisit.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/09b86dd3-ee49-4827-8de7-57de1a71483f" width="600"/>
+</p>
 
+2. Membangun sebuah model sistem rekomendasi fungsional yang memberikan saran bacaan baru yang dipersonalisasi untuk setiap pengguna.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/692a2bb5-9e66-4e59-8344-300a101577ad" width="600"/>
+</p>
 
-
+> **Insight:**
+>  Membuat sistem rekomendasi yang menghasilkan output memberikan rekomendasi buku kepada pengguna yang dipilih User_id -nya
 
 
 
