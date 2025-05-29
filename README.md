@@ -228,7 +228,11 @@ ketiga tabel tersebut memiliki relasi antar table yang pada akhirnya saya lakuka
 > - Rata-rata durasi tiap epoch berada di kisaran 30–40 detik, menunjukkan proses training berjalan efisien dan konsisten.
 > - Tidak ada fluktuasi signifikan dalam waktu proses, sehingga tidak ditemukan bottleneck dari sisi performa komputasi.
 
-#### 3. Visualisasikan Kinerja Model
+
+# Evaluation
+## Collaborative Filtering
+### Model Evaluation
+#### 1. Visualisasikan Kinerja Model
 
 Visualisasi ini menunjukkan bagaimana nilai Root Mean Squared Error (RMSE) berubah sepanjang proses training. Grafik ini sangat berguna untuk mengevaluasi apakah model belajar dengan baik dan untuk mendeteksi overfitting.
 
@@ -239,19 +243,48 @@ Visualisasi ini menunjukkan bagaimana nilai Root Mean Squared Error (RMSE) berub
 > **Insight;**
 > Dari grafik RMSE terlihat bahwa training error terus menurun, menunjukkan model semakin baik mempelajari data training. Namun, validation error awalnya turun lalu stabil dan sedikit naik, menandakan model sudah mencapai batas generalisasi pada data validasi. Terdapat gap antara training dan validation error yang menunjukkan model mulai overfitting. Disarankan untuk menggunakan early stopping, teknik regularisasi seperti dropout atau L2, serta melakukan tuning hyperparameter dan menambah data jika memungkinkan untuk mengurangi overfitting dan meningkatkan performa.
 
-#### 4. Evaluasi Kualitas Rekomendasi
+#### 2. Evaluasi Kualitas Rekomendasi
 
 Digunakan untuk mengevaluasi kualitas rekomendasi model menggunakan dua metrik penting dalam sistem rekomendasi, yaitu Precision@K dan Recall@K, dengan K = 10. Kedua metrik ini lebih relevan dalam konteks top-N recommendation dibandingkan MSE/RMSE, karena mereka mengevaluasi apakah rekomendasi teratas benar-benar relevan bagi user.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/fdc5ed9e-1d9c-48e6-9161-71e47787ed92" width="600"/>
+  <img src="https://github.com/user-attachments/assets/257100ed-474c-4062-a8be-40481acdb71c" width="600"/>
 </p>
 
-> **Insight;**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c8821a4b-ca77-4c1e-b261-32cd8de8902d" width="600"/>
+</p>
+
+> **Insight:**
 > Precision@10 sebesar 87.98% menunjukkan bahwa dari setiap 10 rekomendasi yang diberikan, sekitar 8 hingga 9 item benar-benar relevan dengan preferensi user. Ini menandakan model sangat akurat dalam memilih rekomendasi yang tepat.
 Sementara itu, Recall@10 sebesar 41.73% berarti dari semua item relevan yang ada untuk setiap user, sekitar 41% berhasil masuk dalam 10 rekomendasi teratas. Angka ini cukup baik dan wajar mengingat rekomendasi hanya dibatasi pada Top-10, sedangkan total item relevan bisa jauh lebih banyak.
 
-#Evaluation
+### Metric Evaluation
+#### 1. Root Mean Squared Error (RMSE)
+
+Root Mean Squared Error (RMSE) merupakan salah satu metode untuk menghitung error pada pelatihan model dengan cara menghitung jarak rata-rata antara nilai yang diprediksi dengan nilai sesungguhnya. RMSE mengukur seberapa besar perbedaan (error) antara rating prediksi dan rating aktual dari pengguna. Metrik ini cocok digunakan pada sistem rekomendasi berbasis rating eksplisit, seperti dalam proyek ini.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0e31d900-fced-4cfb-9f94-5ab2c3f12a38" width="600"/>
+</p>
+
+Cara Kerja: Semakin kecil nilai RMSE, semakin kecil selisih antara rating prediksi dan aktual → berarti model lebih akurat.
+
+#### 2. Precision@K dan Recall@K
+
+Metrik ini digunakan untuk mengevaluasi performa sistem rekomendasi dalam hal relevansi terhadap item (buku) yang direkomendasikan.
+**Precision@K**
+Mengukur proporsi item yang relevan dari total (K) item yang direkomendasikan.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7639163d-d5c6-479c-82cd-f6a68aa9ed37" width="600"/>
+</p>
+
+**Recall@K**
+Mengukur proporsi item relevan yang berhasil direkomendasikan dari seluruh item relevan yang tersedia.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/29b68dd2-7089-41ab-8f9d-e4bc36f3a528" width="600"/>
+</p>
 
 
 
@@ -268,10 +301,11 @@ Sementara itu, Recall@10 sebesar 41.73% berarti dari semua item relevan yang ada
 
 
 
+# Rererensi
+[1] Saputra, V. S., Ridwan, A., & Pratama, T. G. (2025). "Rancang Bangun Sistem Rekomendasi Buku Berbasis Item-Based Collaborative Filtering Menggunakan Algoritma K-Nearest Neighbors." Jurnal JUST IT, Vol. 15, No. 2, pp. 325–331, Universitas Muhammadiyah Kudus. [Penelitian ini membahas sistem rekomendasi buku dengan collaborative filtering berbasis K-NN dan evaluasi menggunakan MAE serta RMSE].
 
+[2] Fathoni, M. (2023). "Sistem Rekomendasi Buku di Perpustakaan Daerah Jepara Menggunakan Metode Item-Based Collaborative Filtering." Jurnal Biner, Universitas Sains Al-Qur'an. [Studi kasus penerapan collaborative filtering di perpustakaan daerah dengan evaluasi MAE].
 
+[3] ‘Uyun, S., Fahrurozzi, I., & Mulyanto, A. (2020). "Item Collaborative Filtering untuk Rekomendasi Pembelian Buku secara Online." Jurnal Sistem Informasi, Universitas Ahmad Dahlan. [Pengembangan sistem rekomendasi pada toko buku online dengan collaborative filtering].
 
-
-
-
-
+[4] Tim Jurnal Ilmu Komputer dan Sistem Informasi, Universitas Tarumanagara (2024). "Implementasi Metode Collaborative Filtering Based Untuk Sistem Rekomendasi Buku." JIKSI, Universitas Tarumanagara. [Analisis collaborative filtering dalam sistem rekomendasi buku dan evaluasi akurasi menggunakan MAE].
