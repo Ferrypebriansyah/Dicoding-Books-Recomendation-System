@@ -57,6 +57,48 @@ ketiga tabel tersebut memiliki relasi antar table yang pada akhirnya saya lakuka
 | 11  | `Image-URL-M`         | object    | URL gambar ukuran sedang sampul buku.                                        |
 | 12  | `Image-URL-L`         | object    | URL gambar ukuran besar sampul buku.                                         |
 
+## Data Preparation
+### Exploratory Data Analysis
+#### 1. Distribusi Usia Pembaca
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3b333f89-51bd-4f61-949d-ab9115fb0a56" width="600"/>
+</p>
+
+> **Insight:**
+> Berdasarkan histogram tersebut, dapat disimpulkan bahwa mayoritas pengguna dalam dataset ini adalah kalangan dewasa muda, dengan puncak distribusi usia terkonsentrasi secara signifikan antara 20 hingga 40 tahun. Grafik ini juga menunjukkan adanya right-skew (condong ke kanan), yang menandakan bahwa jumlah pengguna secara bertahap menurun seiring bertambahnya usia, meskipun masih ada basis pengguna yang cukup di usia paruh baya. Selain itu, terdapat indikasi kuat adanya data anomali atau outlier pada usia yang sangat rendah (mendekati 0) dan sangat tinggi (jauh di atas 100 tahun), yang mengindikasikan perlunya pembersihan data lebih lanjut sebelum analisis mendalam.
+
+#### 2. Distribusi Buku yang Paling Banyak Dinilai
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f07e881f-b92d-4e5b-91c4-45d8bb819642" width="600"/>
+</p>
+
+> **Insight:**
+> Popularitas buku dalam dataset diukur berdasarkan jumlah rating, bukan rata-rata skornya.
+> Buku "Wild Animus" merupakan outlier yang sangat mencolok, dengan jumlah ulasan hampir dua kali lipat dibandingkan buku di peringkat kedua.
+> Popularitas ekstrem "Wild Animus" kemungkinan besar tidak mencerminkan kualitas, melainkan dipengaruhi oleh faktor eksternal seperti kampanye pemasaran atau program distribusi buku gratis.
+> Buku-buku lain dalam daftar Top 10 didominasi oleh fiksi populer dan bestseller, seperti "The Lovely Bones" dan "The Da Vinci Code".
+> Hal ini menunjukkan bahwa selera mayoritas pengguna dalam dataset lebih condong ke buku fiksi komersial yang terkenal.
+
+#### 3.Distribusi Penulis dengan Buku Paling Banyak Dirating
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ed581c6a-d68f-4306-9d9a-534d827240a4" width="600"/>
+</p>
+
+> **Insight:**
+> Stephen King menempati posisi teratas sebagai penulis dengan karya terbanyak yang diulas oleh pengguna.
+> Daftar 10 besar penulis didominasi oleh penulis fiksi komersial ternama seperti:
+> - Nora Roberts
+> - John Grisham
+> - James Patterson
+> Penulis-penulis tersebut dikenal sebagai 'powerhouse' dalam genre spesifik seperti:
+> - Thriller
+> - Misteri
+> - Romance
+> Preferensi mayoritas pembaca dalam dataset ini mengarah pada cerita-cerita penuh ketegangan (suspense) dan narasi romantis.
+> Popularitas penulis dalam grafik ini tampak dibangun secara kumulatif dari banyaknya karya, bukan hanya dari satu buku yang sangat populer.
+
+
 
 
 
