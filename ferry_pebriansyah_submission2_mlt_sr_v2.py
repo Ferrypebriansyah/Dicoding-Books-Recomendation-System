@@ -593,11 +593,6 @@ $$
 \text{Recall@K} = \frac{\text{Jumlah item relevan di top-}K}{\text{Total item relevan}}
 $$
 
-**Hasil:**
-
-- Precision@10 = 0.8788: berarti 87.88% dari 10 buku yang direkomendasikan memang relevan.
-
-- Recall@10 = 0.4168: berarti model berhasil menemukan sekitar 41.68% dari semua buku relevan untuk user.
 
 ## Interpretasi dan Insight dari Evaluasi
 
