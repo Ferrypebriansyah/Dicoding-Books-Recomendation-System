@@ -173,7 +173,7 @@ ketiga tabel tersebut memiliki relasi antar table yang pada akhirnya saya lakuka
 
 #### 5. Deskripsi akhir Dataframe df_merged
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/68dcab81-ba5a-4848-bfdf-96c0b60582bd" width="600"/>
+  <img src="https://github.com/user-attachments/assets/68dcab81-ba5a-4848-bfdf-96c0b60582bd" width="500"/>
 </p>
 
 ## Data Splitting
@@ -185,7 +185,7 @@ ketiga tabel tersebut memiliki relasi antar table yang pada akhirnya saya lakuka
 
 #### 2. Melakukan Encoding 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/24486b27-bb25-4e7a-ae34-70ab8de5c346" width="600"/>
+  <img src="https://github.com/user-attachments/assets/24486b27-bb25-4e7a-ae34-70ab8de5c346" width="500"/>
 </p>
 
 #### 3. Split Dataset menjadi  Data Train dan Data Validation
@@ -195,6 +195,50 @@ ketiga tabel tersebut memiliki relasi antar table yang pada akhirnya saya lakuka
 
 
 # Modelling and Result
+#### 1. Membuat Model Arsitektur Collaborative Filtering
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/12dd002a-2037-4c4a-8e2b-da761f52e886" width="600"/>
+</p>
+
+> **Penjelasan:**
+> Model ini menggunakan pendekatan matrix factorization dengan menanamkan (embedding) representasi user dan item (buku) ke dalam vektor berdimensi rendah, dan kemudian menggabungkannya melalui dot product untuk memprediksi skor interaksi. Penambahan bias pada user dan item membantu menyesuaikan prediksi berdasarkan kecenderungan masing-masing entitas. Pendekatan ini sangat umum digunakan dalam sistem rekomendasi berbasis collaborative filtering dan memungkinkan model belajar preferensi laten user terhadap item dari data eksplisit (misalnya rating).
+
+#### 2. Kompilasi dan Training Model
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/981a3048-db92-4b1a-b418-0eeb1382c110" width="600"/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/191903be-8619-46aa-9450-a497db13fd80" width="600"/>
+</p>
+
+> **Penjelasan:**
+> Model dikompilasi menggunakan fungsi kerugian Mean Squared Error (MSE) dan dioptimasi dengan Adam Optimizer. Fungsi aktivasi sigmoid digunakan untuk membatasi output prediksi di antara 0–1. Training dilakukan hingga maksimal 100 epoch dengan early stopping berdasarkan metrik validasi RMSE, yang menghentikan training saat performa validasi tidak meningkat dalam 5 epoch berturut-turut, mencegah overfitting dan menghemat waktu pelatihan.
+
+> **Insight:**
+
+> 1. Konsistensi Penurunan Loss dan RMSE pada Data Training
+> - Model menunjukkan performa yang baik dalam mempelajari pola dari data training.
+> - Terlihat dari penurunan metrik loss dari 0.0759 (RMSE: 0.2732) di epoch 1 menjadi 0.0209 (RMSE: 0.1406) di epoch 14.
+
+> 2. Val_loss dan Val_RMSE Mengalami Perbaikan Terbatas
+> - Pada awal training (epoch 1), val_loss dan val_RMSE tercatat 0.0418 dan 0.1984.
+> - Di akhir epoch ke-14, hanya turun sedikit menjadi 0.0371 dan 0.1897.
+
+> 3. Stabilitas Waktu Training
+> - Rata-rata durasi tiap epoch berada di kisaran 30–40 detik, menunjukkan proses training berjalan efisien dan konsisten.
+> - Tidak ada fluktuasi signifikan dalam waktu proses, sehingga tidak ditemukan bottleneck dari sisi performa komputasi.
+
+#### 3. Visualisasikan Kinerja Model
+
+Visualisasi ini menunjukkan bagaimana nilai Root Mean Squared Error (RMSE) berubah sepanjang proses training. Grafik ini sangat berguna untuk mengevaluasi apakah model belajar dengan baik dan untuk mendeteksi overfitting.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d056ab51-1276-499e-8449-c2612f2cdbb9" width="600"/>
+</p>
+
+> **Insight;**
+> Dari grafik RMSE terlihat bahwa training error terus menurun, menunjukkan model semakin baik mempelajari data training. Namun, validation error awalnya turun lalu stabil dan sedikit naik, menandakan model sudah mencapai batas generalisasi pada data validasi. Terdapat gap antara training dan validation error yang menunjukkan model mulai overfitting. Disarankan untuk menggunakan early stopping, teknik regularisasi seperti dropout atau L2, serta melakukan tuning hyperparameter dan menambah data jika memungkinkan untuk mengurangi overfitting dan meningkatkan performa.
+
 
 
 
