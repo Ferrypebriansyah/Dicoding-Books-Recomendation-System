@@ -287,14 +287,30 @@ Mengukur proporsi item relevan yang berhasil direkomendasikan dari seluruh item 
 </p>
 
 
-
-
-
 # Kesimpulan
 1. Mengidentifikasi buku, penulis, dan karakteristik lainnya yang paling sering mendapatkan rating dari pengguna, berdasarkan analisis data rating eksplisit.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/09b86dd3-ee49-4827-8de7-57de1a71483f" width="600"/>
 </p>
+
+> **Insight:**
+> Dari visualisasi 10 buku dengan jumlah rating terbanyak, dapat diidentifikasi beberapa poin penting terkait buku, penulis, dan karakteristik umum yang populer di kalangan pengguna:
+> 1. Buku dengan Jumlah Rating Terbanyak:
+> - "The Lovely Bones: A Novel" adalah buku yang paling banyak mendapatkan rating, dengan jumlah sekitar 710 rating. Ini menunjukkan popularitas yang sangat tinggi di antara pengguna.
+> - "Wild Animus" berada di posisi kedua dengan jumlah rating sekitar 600.
+> - "The Da Vinci Code" menyusul di posisi ketiga dengan sekitar 500 rating.
+> - Buku-buku seperti "The Secret Life of Bees", "The Nanny Diaries: A Novel", "The Red Tent (Bestselling Backlist)", "Bridget Jones's Diary", "Life of Pi", "Harry Potter and the Chamber of Secrets (Book 2)", dan "Divine Secrets of the Ya-Ya Sisterhood: A Novel" juga menunjukkan jumlah rating yang signifikan, berada di kisaran 300-400 rating.
+
+> 2.Penulis Paling Sering Mendapatkan Rating (Berdasarkan Top 10 Buku):
+> - Alice Sebold (penulis "The Lovely Bones: A Novel") adalah penulis yang bukunya menerima jumlah rating terbanyak di antara 10 buku teratas.
+> - Rich Shapero (penulis "Wild Animus") menyusul sebagai penulis dengan buku yang banyak dirating.
+> - Dan Brown (penulis "The Da Vinci Code") juga sangat populer berdasarkan jumlah rating bukunya.
+> - Penulis lain yang karyanya masuk daftar ini termasuk Sue Monk Kidd, Emma McLaughlin, Anita Diamant, Helen Fielding, Yann Martel, J. K. Rowling, dan Rebecca Wells.
+
+> 3. Karakteristik Buku yang Populer (Implisit dari Judul):
+> - Dominasi Novel: Sebagian besar buku dalam daftar ini berformat novel ("A Novel", "The Nanny Diaries: A Novel", dll.), menunjukkan bahwa genre fiksi populer di kalangan pemberi rating.
+> - Berbagai Genre Fiksi: Meskipun semua novel, genre spesifiknya bervariasi, dari fiksi populer (misalnya, "The Da Vinci Code"), fiksi sastra ("The Lovely Bones"), hingga fiksi fantasi anak-anak/remaja ("Harry Potter and the Chamber of Secrets"). Ini menunjukkan minat pengguna yang beragam dalam genre fiksi.
+> - Potensi Popularitas Luas: Judul-judul seperti "Harry Potter" dan "The Da Vinci Code" sudah dikenal secara global, yang mungkin berkontribusi pada tingginya jumlah rating karena basis pembaca yang luas.
 
 2. Membangun sebuah model sistem rekomendasi fungsional yang memberikan saran bacaan baru yang dipersonalisasi untuk setiap pengguna.
 <p align="center">
