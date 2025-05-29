@@ -318,16 +318,9 @@ Mengukur proporsi item relevan yang berhasil direkomendasikan dari seluruh item 
 </p>
 
 > **Insight:**
->  Membuat sistem rekomendasi yang menghasilkan output memberikan rekomendasi buku kepada pengguna yang dipilih User_id -nya
+>  Membuat sistem rekomendasi yang menghasilkan output memberikan rekomendasi buku kepada pengguna yang dipilih User_id -nya.
 
-
-
-
-
-
-
-
-# Rererensi
+# Referensi
 [1] Saputra, V. S., Ridwan, A., & Pratama, T. G. (2025). "Rancang Bangun Sistem Rekomendasi Buku Berbasis Item-Based Collaborative Filtering Menggunakan Algoritma K-Nearest Neighbors." Jurnal JUST IT, Vol. 15, No. 2, pp. 325–331, Universitas Muhammadiyah Kudus. [Penelitian ini membahas sistem rekomendasi buku dengan collaborative filtering berbasis K-NN dan evaluasi menggunakan MAE serta RMSE].
 
 [2] Fathoni, M. (2023). "Sistem Rekomendasi Buku di Perpustakaan Daerah Jepara Menggunakan Metode Item-Based Collaborative Filtering." Jurnal Biner, Universitas Sains Al-Qur'an. [Studi kasus penerapan collaborative filtering di perpustakaan daerah dengan evaluasi MAE].
