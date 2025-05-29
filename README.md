@@ -47,15 +47,15 @@ ketiga tabel tersebut memiliki relasi antar table yang pada akhirnya saya lakuka
 | 1   | `User-ID`             | int64     | ID unik pengguna yang memberikan rating buku.                                |
 | 2   | `ISBN`                | object    | ISBN (International Standard Book Number) sebagai ID unik untuk setiap buku. |
 | 3   | `Book-Rating`         | int64     | Nilai rating yang diberikan pengguna terhadap buku (biasanya 0–10).          |
-| 4   | `Location`            | object    | Lokasi pengguna dalam format .                       |
-| 5   | `Age`                 | float64   | Usia pengguna (ada missing values).                                          |
+| 4   | `Location`            | object    | Lokasi pengguna dalam format.                       |
+| 5   | `Age`                 | float64   | Usia pengguna.                                                               |
 | 6   | `Book-Title`          | object    | Judul buku yang diberi rating.                                               |
-| 7   | `Book-Author`         | object    | Nama penulis buku (ada nilai kosong).                                        |
-| 8   | `Year-Of-Publication` | object    | Tahun terbit buku. Awalnya bertipe object karena terdapat nilai non-numerik. |
-| 9   | `Publisher`           | object    | Nama penerbit buku (ada nilai kosong).                                       |
+| 7   | `Book-Author`         | object    | Nama penulis buku.                                                           |
+| 8   | `Year-Of-Publication` | object    | Tahun terbit buku.                                                           |
+| 9   | `Publisher`           | object    | Nama penerbit buku.                                                          |
 | 10  | `Image-URL-S`         | object    | URL gambar ukuran kecil sampul buku.                                         |
 | 11  | `Image-URL-M`         | object    | URL gambar ukuran sedang sampul buku.                                        |
-| 12  | `Image-URL-L`         | object    | URL gambar ukuran besar sampul buku (ada nilai kosong).                      |
+| 12  | `Image-URL-L`         | object    | URL gambar ukuran besar sampul buku.                                         |
 
 
 
