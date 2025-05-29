@@ -239,6 +239,23 @@ Visualisasi ini menunjukkan bagaimana nilai Root Mean Squared Error (RMSE) berub
 > **Insight;**
 > Dari grafik RMSE terlihat bahwa training error terus menurun, menunjukkan model semakin baik mempelajari data training. Namun, validation error awalnya turun lalu stabil dan sedikit naik, menandakan model sudah mencapai batas generalisasi pada data validasi. Terdapat gap antara training dan validation error yang menunjukkan model mulai overfitting. Disarankan untuk menggunakan early stopping, teknik regularisasi seperti dropout atau L2, serta melakukan tuning hyperparameter dan menambah data jika memungkinkan untuk mengurangi overfitting dan meningkatkan performa.
 
+#### 4. Evaluasi Kualitas Rekomendasi
+
+Digunakan untuk mengevaluasi kualitas rekomendasi model menggunakan dua metrik penting dalam sistem rekomendasi, yaitu Precision@K dan Recall@K, dengan K = 10. Kedua metrik ini lebih relevan dalam konteks top-N recommendation dibandingkan MSE/RMSE, karena mereka mengevaluasi apakah rekomendasi teratas benar-benar relevan bagi user.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fdc5ed9e-1d9c-48e6-9161-71e47787ed92" width="600"/>
+</p>
+
+> **Insight;**
+> Precision@10 sebesar 87.98% menunjukkan bahwa dari setiap 10 rekomendasi yang diberikan, sekitar 8 hingga 9 item benar-benar relevan dengan preferensi user. Ini menandakan model sangat akurat dalam memilih rekomendasi yang tepat.
+Sementara itu, Recall@10 sebesar 41.73% berarti dari semua item relevan yang ada untuk setiap user, sekitar 41% berhasil masuk dalam 10 rekomendasi teratas. Angka ini cukup baik dan wajar mengingat rekomendasi hanya dibatasi pada Top-10, sedangkan total item relevan bisa jauh lebih banyak.
+
+#Evaluation
+
+
+
+
 
 
 
