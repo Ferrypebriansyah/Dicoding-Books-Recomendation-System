@@ -176,6 +176,13 @@ ketiga tabel tersebut memiliki relasi antar table yang pada akhirnya saya lakuka
   <img src="https://github.com/user-attachments/assets/68dcab81-ba5a-4848-bfdf-96c0b60582bd" width="600"/>
 </p>
 
+# Modelling and Result
+##### 1. Mmembuat dataframe baru dan mengambil kolom yang dibutuhkan
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/25c8de18-0a9e-4683-9640-b02d4dc94fbf" width="600"/>
+</p>
+
+##### 2. Encoding 
 
 
 
